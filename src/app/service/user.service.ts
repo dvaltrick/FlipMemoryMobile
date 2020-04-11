@@ -21,4 +21,8 @@ export class UserService {
   public login(data:User):Observable<HttpResponse<User>>{
     return this.httpClient.post<User>(this.BASE_URL+"login",data,{observe: 'response'});
   }
+
+  public post(user:User):Observable<User> {
+    return this.httpClient.post<User>(this.BASE_URL+"api/userentity",user, httpOptions);
+  }
 }

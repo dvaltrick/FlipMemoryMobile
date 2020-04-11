@@ -2,3 +2,24 @@
     background-color: "green";
     color: "white";
 }
+
+.revealSpace {
+    margin-top: 20px;
+    bottom: 0px;
+}
+
+.expand-wrapper {
+    margin-top: 20px;
+    transition: max-height 2.0s ease-in-out;
+    overflow: hidden;
+    height: auto;
+    background-color: whitesmoke;
+    color: black;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.collapsed {
+    max-height: 0 !important;
+    padding: 0px !important;
+}

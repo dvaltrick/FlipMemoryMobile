@@ -1,0 +1,24 @@
+.emptystate {
+    width: calc(100% - 40px);
+    text-align: center;
+    font-size: large;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 10px;
+    border: 5px solid #d7d8da;
+}
+
+.emptystate h6 {
+    font-weight: bold;
+    color: #222428;
+}
+
+.artigo {
+    text-align: left;
+    font-size: small;
+    margin-left: 20px;
+    color: #383a3e;
+}

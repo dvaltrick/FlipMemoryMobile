@@ -15,5 +15,31 @@
 </ion-header>
 
 <ion-content>
-  <app-card></app-card>
+  <div *ngIf="found">
+    <app-card [categoryTitle]="category.name"
+      [question]="card.question"
+      [answer]="card.answer"
+      [backColor]="category.color"
+      [expanded]="enableButtons"
+      (onRevealed)="onRevealed($event);"></app-card>
+  </div>
+  <app-empty-state *ngIf="!found"></app-empty-state>
+
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+      <ion-button color="light" expand="full" fill="clean" slot="start" [disabled]="!enableButtons" (click)="response(0);">
+        <ion-icon name="thumbs-up-sharp" slot="start" color="success"></ion-icon>
+        Acertei
+      </ion-button>
+      <ion-button color="light" expand="full" fill="clean" [disabled]="!enableButtons" (click)="response(1);">
+        <ion-icon name="star-half" slot="start" color="warning"></ion-icon>
+        Incompleta
+      </ion-button>
+      <ion-button color="light" expand="full" slot="end" fill="clean" (click)="response(2);" >
+        <ion-icon name="thumbs-down-sharp" slot="start" color="danger"></ion-icon>
+        {{enableButtons ?  "Errei" : "Não sei"}}
+      </ion-button>
+  </ion-toolbar>
+</ion-footer>

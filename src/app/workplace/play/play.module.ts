@@ -9,6 +9,7 @@ import { PlayPageRoutingModule } from './play-routing.module';
 import { PlayPage } from './play.page';
 import { PopoverMenuComponent } from './popover-menu/popover-menu.component';
 import { CardComponent } from './card/card.component';
+import { EmptyStateComponent } from 'src/app/ui/empty-state/empty-state.component';
 
 @NgModule({
   imports: [
@@ -17,7 +18,7 @@ import { CardComponent } from './card/card.component';
     IonicModule,
     PlayPageRoutingModule
   ],
-  entryComponents: [PopoverMenuComponent, CardComponent],
-  declarations: [PlayPage, PopoverMenuComponent, CardComponent]
+  entryComponents: [PopoverMenuComponent, CardComponent, EmptyStateComponent],
+  declarations: [PlayPage, PopoverMenuComponent, CardComponent, EmptyStateComponent]
 })
 export class PlayPageModule {}

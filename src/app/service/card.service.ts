@@ -25,4 +25,15 @@ export class CardService {
     return this.httpClient.post<Card>(this.BASE_URL,card, httpOptions);
   }
 
+  public getRandom(token):Observable<Card> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json',
+        'Authorization': token
+      })
+    };
+
+    return this.httpClient.get<Card>(this.BASE_URL+"/random", httpOptions);
+  }
+
 }

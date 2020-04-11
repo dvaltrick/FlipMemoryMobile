@@ -1,8 +1,22 @@
-<ion-card [ngStyle]="{'background-color':'red', color: 'white'}">
+<ion-card [ngStyle]="{'background-color': backColor, color: 'white'}">
   <ion-card-header>
-    <ion-card-title color="light">Categoria</ion-card-title>
+    <ion-card-title color="light">{{categoryTitle}}</ion-card-title>
   </ion-card-header>
   <ion-card-content>
-    Questão
+    <div>
+      <h2>
+        {{question}}
+      </h2>
+    </div>
+    <div class="revealSpace" *ngIf="!expanded">
+      <ion-button (click)="reveal();" 
+        color="light"
+        size="small"
+        expand="block"
+        fill="solid">Revelar resposta</ion-button>
+    </div>
+    <div #expandWrapper class='expand-wrapper' [class.collapsed]="!expanded">
+      <h2>{{answer}}</h2>
+    </div>
   </ion-card-content>
 </ion-card>

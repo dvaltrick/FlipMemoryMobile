@@ -6,6 +6,8 @@ import { Router } from '@angular/router';
 
 import { LoadingController } from '@ionic/angular';
 import { ToastController } from '@ionic/angular';
+import { ModalController } from '@ionic/angular';
+import { NewUserComponent } from './new-user/new-user.component';
 
 @Component({
   selector: 'app-login',
@@ -19,6 +21,7 @@ export class LoginPage implements OnInit {
               private storage: Storage,
               public loadingController: LoadingController,
               public toastController: ToastController,
+              public modalController: ModalController,
               private router: Router) { 
     this.authUser = new User();
   }
@@ -47,6 +50,20 @@ export class LoginPage implements OnInit {
     }
 
     return true;
+  }
+
+  async presentModal() {
+    const modal = await this.modalController.create({
+      component: NewUserComponent
+    });
+    modal.onDidDismiss().then(
+      refresh => {
+        if (refresh.data) {
+          console.log(refresh);
+        }
+      }
+    );
+    return await modal.present();
   }
 
   public async login() {

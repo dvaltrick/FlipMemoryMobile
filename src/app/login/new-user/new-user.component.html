@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="end">
+      <ion-button (click)="closeModal();">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Novo usuário</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form>
+    <ion-item>
+      <ion-label position="stacked">Nome</ion-label>
+      <ion-input id="cadname" name="cadname" [(ngModel)]="user.userProfile.name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Email</ion-label>
+      <ion-input id="cademail" name="cademail" [(ngModel)]="user.userProfile.email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Nome de usuário</ion-label>
+      <ion-input id="cadusername" name="cadusername" [(ngModel)]="user.username"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Senha</ion-label>
+      <ion-input id="cadpassword" name="cadpassword" type="password" [(ngModel)]="user.password"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Confirme a senha</ion-label>
+      <ion-input id="cadpasswordconfirm" name="cadpasswordconfirm" type="password" [(ngModel)]="confirmPassword"></ion-input>
+    </ion-item>
+  </form>
+</ion-content>
+
+<ion-footer>
+  <ion-button (click)="save();" color="primary" expand="full">
+    <ion-icon name="checkmark" slot="start"></ion-icon>
+    Salvar
+  </ion-button>
+</ion-footer>
