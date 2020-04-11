@@ -1,0 +1,28 @@
+<ion-card>
+  <ion-card-header [ngStyle]="{'background-color':selectedColor, color: 'white'}">
+    <div class="header-box">
+      {{selectedColor}}
+    </div>
+  </ion-card-header>
+  <ion-card-content class="content-picker">
+    <ion-item>
+      <ion-label>{{title}}</ion-label>
+    </ion-item>
+    <ion-grid *ngIf="colorPickerItems !== undefined && colorPickerItems.length > 0"
+      class="color-grid">
+      <ion-row *ngFor="let collums of colorPickerItems" class="color-row">
+        <ion-col *ngFor="let buttonColor of collums" class="color-collum">
+          <ion-button size="small" 
+            fill="clear" 
+            (click)="select(buttonColor);"
+            class="color-button">
+            <ion-icon name="square" 
+              class="color-icon"
+              slot="icon-only"
+              [ngStyle]="{'color':buttonColor}"></ion-icon>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card-content>
+</ion-card>

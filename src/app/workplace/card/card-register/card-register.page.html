@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Novo cartão</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form>
+    <ion-item>
+      <ion-label>Categoria</ion-label>
+      <ion-select placeholder="Escolha a categoria" interface="action-sheet" ([ngModel])="selectedCategory" (ionChange)="onChangeCategory($event.detail.value);">
+        <ion-select-option [value]="cat.id" *ngFor="let cat of categories">{{cat.name}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-button fill="clean" (click)="scanQuestion();">
+        <ion-icon slot="start" name="scan"></ion-icon>
+        Capturar questão
+      </ion-button>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Questão</ion-label>
+      <ion-textarea id="question" 
+        name="question" 
+        (ngModelChange)="onQuestionChanged($event);"
+        [ngModel]="card.question"
+        rows="6"></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-button fill="clean" (click)="scanAnswer();">
+        <ion-icon slot="start" name="scan"></ion-icon>
+        Capturar resposta
+      </ion-button>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Resposta</ion-label>
+      <ion-textarea id="answer" 
+        name="answer" 
+        (ngModelChange)="onAnswerChanged($event);"
+        [ngModel]="card.answer"
+        rows="6"></ion-textarea>
+    </ion-item>
+  </form>
+</ion-content>
+
+<ion-footer>
+  <ion-button color="primary" expand="full" (click)="save();">
+    <ion-icon name="checkmark" slot="start"></ion-icon>
+    Salvar
+  </ion-button>
+</ion-footer>

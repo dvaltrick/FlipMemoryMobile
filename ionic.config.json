@@ -1,7 +1,8 @@
 {
   "name": "flipmemoryMobile",
   "integrations": {
-    "capacitor": {}
+    "capacitor": {},
+    "cordova": {}
   },
   "type": "angular"
 }

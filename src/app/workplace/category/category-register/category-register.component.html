@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="end">
+      <ion-button (click)="closeModal();">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Nova categoria</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form>
+    <ion-list>
+      <ion-item>
+        <ion-label position="floating">Nome</ion-label>
+          <ion-input id="name" name="name" [(ngModel)]="category.name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <dvaltrickUi-color-picker
+          id="color" name="color"
+          title="Selecione uma cor"
+          [colorList]="['#f44336', '#e91e63', '#9c27b0', '#673ab7', '#3f51b5', '#2196f3',
+            '#03a9f4', '#00bcd4', '#009688', '#4caf50', '#8bc34a', '#cddc39',
+            '#ffeb3b', '#ffc107', '#ff9800', '#ff5722', '#795548', '#607d8b']"
+          (changeSelectedColor)='onChangeColor($event)'></dvaltrickUi-color-picker>
+      </ion-item>
+    </ion-list>
+  </form>
+</ion-content>
+
+<ion-footer>
+  <ion-button (click)="save();" color="primary" expand="full">
+    <ion-icon name="checkmark" slot="start"></ion-icon>
+    Salvar
+  </ion-button>
+</ion-footer>

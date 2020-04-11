@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Categorias</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="categories.length > 0">
+    <ion-list>
+      <ion-item button *ngFor="let item of categories">
+        <ion-icon name="ellipse" [ngStyle]="{'color':item.color}" slot="start"></ion-icon>
+        <ion-label>
+          {{item.name}}
+        </ion-label>
+        <ion-button 
+          color="medium"
+          fill="clear"
+          slot="end"
+          (click)="delete(item.id)">
+          <ion-icon name="trash-outline"></ion-icon>
+        </ion-button>
+      </ion-item>
+    </ion-list>
+  </div>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button color="success" (click)="presentModal();">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

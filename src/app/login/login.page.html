@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+  <form>
+    <ion-list lines="full" class="ion-no-margin ion-no-padding">
+      <ion-item>
+        <ion-label position="stacked">Nome de usuário</ion-label>
+        <ion-input 
+          type="text" 
+          id="username"
+          name="username"
+          [(ngModel)]="authUser.username"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Senha</ion-label>
+        <ion-input 
+          type="password" 
+          id="password"
+          name="password"
+          [(ngModel)]="authUser.password"></ion-input>
+      </ion-item>
+    </ion-list>
+
+    <div class="ion-padding">
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-button 
+              expand="block" 
+              fill="outline"
+              color="primary"
+              class="ion-no-margin"
+              (click)="login();">Login</ion-button>
+          </ion-col>
+          <ion-col>
+            <ion-button 
+              expand="block" 
+              fill="outline"
+              color="secondary"
+              class="ion-no-margin"
+              >Cadastre-se</ion-button>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-button 
+              expand="block" 
+              size="small" 
+              color="light">Esqueci minha senha</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>      
+    </div>
+  </form>
+</ion-content>
